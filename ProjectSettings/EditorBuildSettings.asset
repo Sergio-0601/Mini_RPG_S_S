@@ -8,6 +8,15 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/SampleScene.unity
     guid: 8c9cfa26abfee488c85f1582747f6a02
+  - enabled: 1
+    path: Assets/Scenes/Main_Tittle.unity
+    guid: d2773ee21465d804a9b5119ef9f3012b
+  - enabled: 1
+    path: Assets/Scenes/House_Start.unity
+    guid: 444992fd3026d554d82cbbe435383e61
+  - enabled: 1
+    path: Assets/Scenes/Overworld.unity
+    guid: 2ad73af107fb91546841ac68df537f6d
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   m_UseUCBPForAssetBundles: 0
