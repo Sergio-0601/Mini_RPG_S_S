@@ -14,8 +14,8 @@ public class PlayerMovement : MonoBehaviour
 
     private void Awake()
     {
-        rb = GetComponent<Rigidbody2D>();
-        rb.constraints = RigidbodyConstraints2D.FreezeRotation;
+       
+       
     }
 
     private void Update()
@@ -25,12 +25,7 @@ public class PlayerMovement : MonoBehaviour
             return;
         }
         // Aplicar fuerza horizontal solo si no excede la velocidad máxima
-        float velX = rb.linearVelocity.x;
-        float targetVelX = moveInput.x * velocidadMaxima;
-        if (Mathf.Abs(velX) < Mathf.Abs(targetVelX))
-        {
-            rb.AddForce(new Vector2(moveInput.x * velocidad, 0), ForceMode2D.Force);
-        }       
+        transform.position += new Vector3 (moveInput.x, moveInput.y, 0).normalized *0.01f;
     }
 
     public void Jump()
