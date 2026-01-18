@@ -16,16 +16,16 @@ public class PlayerManager : MonoBehaviour
     void Start()
     {
         input = GetComponent<PlayerInputHandler>();
-        movement = GetComponent<PlayerMovement>();
-        knockback = GetComponent<KnockbackHandler>();
-        collisionDetector = GetComponent<PlayerCollisionDetector>();
-        health = GetComponent<Health>();
+    movement = GetComponent<PlayerMovement>();
+    knockback = GetComponent<KnockbackHandler>();
+    collisionDetector = GetComponent<PlayerCollisionDetector>();
+    health = GetComponent<Health>();
 
-        knockback.OnStunChanged += isStunned => { movement.isStunned = isStunned; };
-        collisionDetector.OnGroundedChanged += (isGrounded) => { movement.isGrounded = isGrounded; };
-        health.OnDeath += Death;
+    knockback.OnStunChanged += isStunned => { movement.isStunned = isStunned; };
+    collisionDetector.OnGroundedChanged += (isGrounded) => { movement.isGrounded = isGrounded; };
+    health.OnDeath += Death;
 
-  //      transform.position = respawnPosition.position;
+  
     }
 
     private void Update()
