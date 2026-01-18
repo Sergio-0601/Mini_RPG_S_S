@@ -13,42 +13,79 @@ public class InventoryUI : MonoBehaviour
     [SerializeField] private TMP_Text itemDescriptionText;
     [SerializeField] private GameObject itemInfoPanel;
 
-    [Header("Settings")]
-    [SerializeField] private KeyCode toggleKey = KeyCode.I;
-
     private List<InventorySlotUI> slotUIList = new List<InventorySlotUI>();
     private bool isOpen = false;
 
     private void Start()
     {
+        Debug.Log("=== InventoryUI Start ===");
+        Debug.Log($"inventoryPanel: {inventoryPanel?.name}");
+        Debug.Log($"slotPrefab: {slotPrefab?.name}");
+        Debug.Log($"slotsContainer: {slotsContainer?.name}");
+        
         CreateSlots();
         
         if (InventoryManager.Instance != null)
         {
             InventoryManager.Instance.OnInventoryChanged += UpdateUI;
+            Debug.Log("InventoryManager encontrado");
+        }
+        else
+        {
+            Debug.LogError("¡InventoryManager.Instance es NULL!");
         }
 
         inventoryPanel.SetActive(false);
         if (itemInfoPanel != null)
             itemInfoPanel.SetActive(false);
+            
+        Debug.Log("InventoryUI inicializado correctamente");
     }
 
-    private void Update()
+   private void Update()
+{
+    
+    #if ENABLE_INPUT_SYSTEM
+    var keyboard = UnityEngine.InputSystem.Keyboard.current;
+    if (keyboard != null)
     {
-        // Compatible con ambos sistemas de input
-        #if ENABLE_INPUT_SYSTEM
-        if (UnityEngine.InputSystem.Keyboard.current != null && 
-            UnityEngine.InputSystem.Keyboard.current.iKey.wasPressedThisFrame)
+        if (keyboard.tabKey.wasPressedThisFrame)
         {
+            Debug.Log("¡¡¡TAB PRESIONADA!!!");
             ToggleInventory();
         }
-        #else
-        if (Input.GetKeyDown(toggleKey))
+        
+        if (keyboard.iKey.wasPressedThisFrame)
         {
+            Debug.Log("¡¡¡I PRESIONADA!!!");
             ToggleInventory();
         }
-        #endif
+        
+        if (keyboard.spaceKey.wasPressedThisFrame)
+        {
+            Debug.Log("¡¡¡SPACE PRESIONADA!!! (test)");
+        }
     }
+    #else
+    
+    if (Input.GetKeyDown(KeyCode.Tab))
+    {
+        Debug.Log("¡¡¡TAB PRESIONADA!!!");
+        ToggleInventory();
+    }
+    
+    if (Input.GetKeyDown(KeyCode.I))
+    {
+        Debug.Log("¡¡¡I PRESIONADA!!!");
+        ToggleInventory();
+    }
+    
+    if (Input.GetKeyDown(KeyCode.Space))
+    {
+        Debug.Log("¡¡¡SPACE PRESIONADA!!! (test)");
+    }
+    #endif
+}
 
     private void CreateSlots()
     {
@@ -98,7 +135,6 @@ public class InventoryUI : MonoBehaviour
         {
             ShowItemInfo(slot.item);
 
-            // Si el item es usable, usarlo al hacer click
             if (slot.item.isUsable)
             {
                 InventoryManager.Instance.UseItem(slotIndex);
@@ -130,16 +166,26 @@ public class InventoryUI : MonoBehaviour
 
     public void ToggleInventory()
     {
+        Debug.Log("=== TOGGLE INVENTORY LLAMADO ===");
+        Debug.Log($"isOpen ANTES: {isOpen}");
+        Debug.Log($"inventoryPanel null? {inventoryPanel == null}");
+        
+        if (inventoryPanel == null)
+        {
+            Debug.LogError("¡inventoryPanel es NULL!");
+            return;
+        }
+        
         isOpen = !isOpen;
         inventoryPanel.SetActive(isOpen);
+        
+        Debug.Log($"isOpen DESPUÉS: {isOpen}");
+        Debug.Log($"Panel activeSelf: {inventoryPanel.activeSelf}");
         
         if (!isOpen)
         {
             HideItemInfo();
         }
-
-        // Pausar el juego cuando el inventario está abierto (opcional)
-        // Time.timeScale = isOpen ? 0 : 1;
     }
 
     private void OnDestroy()

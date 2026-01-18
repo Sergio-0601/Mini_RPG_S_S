@@ -1,4 +1,3 @@
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -9,6 +8,7 @@ public class PlayerInputHandler : MonoBehaviour
     public Vector2 MoveInput { get; set; }
     public bool JumpPressed { get; set; }
     private GameObject NpcCheck = null;
+
     private void Awake()
     {
         controls = new PlayerControl();
@@ -24,8 +24,11 @@ public class PlayerInputHandler : MonoBehaviour
 
         // Salto
         controls.Player.Jump.performed += _ => JumpPressed = true;
+        
         // Interactuar
         controls.Player.Interact.performed += _ => Interact();
+        
+        // NO incluimos ToggleInventory aquí - se maneja en InventoryUI directamente
     }
 
     private void OnDisable()
@@ -37,6 +40,7 @@ public class PlayerInputHandler : MonoBehaviour
     {
         JumpPressed = false;
     }
+
     public void OnTriggerEnter2D(Collider2D collision) 
     {
         if (collision.gameObject.CompareTag("NPC"))
@@ -44,6 +48,7 @@ public class PlayerInputHandler : MonoBehaviour
             NpcCheck = collision.gameObject;
         }
     }
+
     public void OnTriggerExit2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("NPC"))
@@ -51,13 +56,12 @@ public class PlayerInputHandler : MonoBehaviour
             NpcCheck = null;
         }
     }
-    private void  Interact() 
+
+    private void Interact() 
     {
         if (NpcCheck)
         {
             NpcCheck.GetComponent<NPCDialogue>().Hablar();
         }
-        
     }
-
 }

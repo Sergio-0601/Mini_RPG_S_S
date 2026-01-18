@@ -25,6 +25,7 @@ public class PlayerManager : MonoBehaviour
     collisionDetector.OnGroundedChanged += (isGrounded) => { movement.isGrounded = isGrounded; };
     health.OnDeath += Death;
 
+    movement.isGrounded = true;
   
     }
 
