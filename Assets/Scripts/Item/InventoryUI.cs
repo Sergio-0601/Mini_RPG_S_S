@@ -15,78 +15,22 @@ public class InventoryUI : MonoBehaviour
 
     private List<InventorySlotUI> slotUIList = new List<InventorySlotUI>();
     private bool isOpen = false;
+ 
 
     private void Start()
     {
-        Debug.Log("=== InventoryUI Start ===");
-        Debug.Log($"inventoryPanel: {inventoryPanel?.name}");
-        Debug.Log($"slotPrefab: {slotPrefab?.name}");
-        Debug.Log($"slotsContainer: {slotsContainer?.name}");
-        
         CreateSlots();
         
         if (InventoryManager.Instance != null)
         {
             InventoryManager.Instance.OnInventoryChanged += UpdateUI;
-            Debug.Log("InventoryManager encontrado");
-        }
-        else
-        {
-            Debug.LogError("¡InventoryManager.Instance es NULL!");
         }
 
-        inventoryPanel.SetActive(false);
+        inventoryPanel.SetActive(false); // Ensure hidden on start
         if (itemInfoPanel != null)
             itemInfoPanel.SetActive(false);
-            
-        Debug.Log("InventoryUI inicializado correctamente");
     }
-
-   private void Update()
-{
-    
-    #if ENABLE_INPUT_SYSTEM
-    var keyboard = UnityEngine.InputSystem.Keyboard.current;
-    if (keyboard != null)
-    {
-        if (keyboard.tabKey.wasPressedThisFrame)
-        {
-            Debug.Log("¡¡¡TAB PRESIONADA!!!");
-            ToggleInventory();
-        }
-        
-        if (keyboard.iKey.wasPressedThisFrame)
-        {
-            Debug.Log("¡¡¡I PRESIONADA!!!");
-            ToggleInventory();
-        }
-        
-        if (keyboard.spaceKey.wasPressedThisFrame)
-        {
-            Debug.Log("¡¡¡SPACE PRESIONADA!!! (test)");
-        }
-    }
-    #else
-    
-    if (Input.GetKeyDown(KeyCode.Tab))
-    {
-        Debug.Log("¡¡¡TAB PRESIONADA!!!");
-        ToggleInventory();
-    }
-    
-    if (Input.GetKeyDown(KeyCode.I))
-    {
-        Debug.Log("¡¡¡I PRESIONADA!!!");
-        ToggleInventory();
-    }
-    
-    if (Input.GetKeyDown(KeyCode.Space))
-    {
-        Debug.Log("¡¡¡SPACE PRESIONADA!!! (test)");
-    }
-    #endif
-}
-
+ 
     private void CreateSlots()
     {
         if (InventoryManager.Instance == null)
@@ -166,21 +110,8 @@ public class InventoryUI : MonoBehaviour
 
     public void ToggleInventory()
     {
-        Debug.Log("=== TOGGLE INVENTORY LLAMADO ===");
-        Debug.Log($"isOpen ANTES: {isOpen}");
-        Debug.Log($"inventoryPanel null? {inventoryPanel == null}");
-        
-        if (inventoryPanel == null)
-        {
-            Debug.LogError("¡inventoryPanel es NULL!");
-            return;
-        }
-        
         isOpen = !isOpen;
         inventoryPanel.SetActive(isOpen);
-        
-        Debug.Log($"isOpen DESPUÉS: {isOpen}");
-        Debug.Log($"Panel activeSelf: {inventoryPanel.activeSelf}");
         
         if (!isOpen)
         {

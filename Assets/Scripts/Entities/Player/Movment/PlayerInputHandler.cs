@@ -7,6 +7,9 @@ public class PlayerInputHandler : MonoBehaviour
 
     public Vector2 MoveInput { get; set; }
     public bool JumpPressed { get; set; }
+    
+
+    
     private GameObject NpcCheck = null;
 
     private void Awake()
@@ -14,8 +17,14 @@ public class PlayerInputHandler : MonoBehaviour
         controls = new PlayerControl();
     }
 
+    private InventoryUI inventoryUI;
+
     private void OnEnable()
     {
+        if (controls == null)
+        {
+            controls = new PlayerControl();
+        }
         controls.Player.Enable();
 
         // Movimiento
@@ -28,13 +37,17 @@ public class PlayerInputHandler : MonoBehaviour
         // Interactuar
         controls.Player.Interact.performed += _ => Interact();
         
-        // NO incluimos ToggleInventory aquí - se maneja en InventoryUI directamente
+        // Find InventoryUI
+        if (inventoryUI == null)
+            inventoryUI = FindFirstObjectByType<InventoryUI>(FindObjectsInactive.Include);
+
+        // NUEVO - Inventario (Input Action Backup)
+        controls.Player.Inventory.performed += _ => {
+             if(inventoryUI != null) inventoryUI.ToggleInventory();
+        };
     }
 
-    private void OnDisable()
-    {
-        controls.Player.Disable();
-    }
+
 
     private void LateUpdate()
     {

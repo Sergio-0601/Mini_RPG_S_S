@@ -2125,6 +2125,50 @@ PrefabInstance:
       propertyPath: m_Name
       value: Canvas
       objectReference: {fileID: 0}
+    - target: {fileID: 802802535222196210, guid: 065ee0d6ca5e1b5429db552800a69a96, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 802802535222196210, guid: 065ee0d6ca5e1b5429db552800a69a96, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 802802535222196210, guid: 065ee0d6ca5e1b5429db552800a69a96, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 802802535222196210, guid: 065ee0d6ca5e1b5429db552800a69a96, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 802802535222196210, guid: 065ee0d6ca5e1b5429db552800a69a96, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 800
+      objectReference: {fileID: 0}
+    - target: {fileID: 802802535222196210, guid: 065ee0d6ca5e1b5429db552800a69a96, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 600
+      objectReference: {fileID: 0}
+    - target: {fileID: 1837430411216574568, guid: 065ee0d6ca5e1b5429db552800a69a96, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1837430411216574568, guid: 065ee0d6ca5e1b5429db552800a69a96, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1837430411216574568, guid: 065ee0d6ca5e1b5429db552800a69a96, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 400
+      objectReference: {fileID: 0}
+    - target: {fileID: 1837430411216574568, guid: 065ee0d6ca5e1b5429db552800a69a96, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 300
+      objectReference: {fileID: 0}
+    - target: {fileID: 1837430411216574568, guid: 065ee0d6ca5e1b5429db552800a69a96, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4301744715728368948, guid: 065ee0d6ca5e1b5429db552800a69a96, type: 3}
       propertyPath: m_IsActive
       value: 1
@@ -2222,6 +2266,30 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3015712445799112129, guid: dfe1b49f30aaa5b46a754dfe810764ab, type: 3}
+      propertyPath: m_ActionEvents.Array.size
+      value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: 3015712445799112129, guid: dfe1b49f30aaa5b46a754dfe810764ab, type: 3}
+      propertyPath: m_ActionEvents.Array.data[15].m_ActionId
+      value: 65134293-e9c2-492c-af82-0800bbd803fb
+      objectReference: {fileID: 0}
+    - target: {fileID: 3015712445799112129, guid: dfe1b49f30aaa5b46a754dfe810764ab, type: 3}
+      propertyPath: m_ActionEvents.Array.data[15].m_ActionName
+      value: 'Player/Inventory[/Keyboard/i]'
+      objectReference: {fileID: 0}
+    - target: {fileID: 3015712445799112129, guid: dfe1b49f30aaa5b46a754dfe810764ab, type: 3}
+      propertyPath: m_ActionEvents.Array.data[15].m_PersistentCalls.m_Calls.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3015712445799112129, guid: dfe1b49f30aaa5b46a754dfe810764ab, type: 3}
+      propertyPath: m_ActionEvents.Array.data[15].m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3015712445799112129, guid: dfe1b49f30aaa5b46a754dfe810764ab, type: 3}
+      propertyPath: m_ActionEvents.Array.data[15].m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 3079827768646183991, guid: dfe1b49f30aaa5b46a754dfe810764ab, type: 3}
       propertyPath: m_Name
       value: Player
