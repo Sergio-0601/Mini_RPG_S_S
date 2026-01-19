@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Item
   itemName: Manzana
   description: Una manzana fresca y deliciosa
-  icon: {fileID: 0}
+  icon: {fileID: -1389860050349794336, guid: 6b3702de7e0c2824e8fa03d9a94af8e6, type: 3}
   itemType: 3
   isStackable: 1
   maxStackSize: 99

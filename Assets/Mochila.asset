@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Item
   itemName: Mochila
   description: Una mochila para guardar objetos importantes
-  icon: {fileID: 0}
+  icon: {fileID: 5124475773856084676, guid: 9afe5177537b0334482d4e8c8badde1d, type: 3}
   itemType: 2
   isStackable: 0
   maxStackSize: 1
