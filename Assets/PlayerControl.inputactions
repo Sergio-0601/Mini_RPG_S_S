@@ -28,7 +28,7 @@
                     "name": "Fire",
                     "type": "Button",
                     "id": "a8de9282-3849-4768-854b-394cb6a76e9b",
-                    "expectedControlType": "Button",
+                    "expectedControlType": "",
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
@@ -46,6 +46,15 @@
                     "name": "Interact",
                     "type": "Button",
                     "id": "613a2ba3-6abc-484d-be72-26a8b653d7ab",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Inventory",
+                    "type": "Button",
+                    "id": "65134293-e9c2-492c-af82-0800bbd803fb",
                     "expectedControlType": "",
                     "processors": "",
                     "interactions": "",
@@ -303,6 +312,17 @@
                     "processors": "",
                     "groups": "",
                     "action": "Interact",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "5cf5132e-9ceb-47d4-aa19-7584bb745ea2",
+                    "path": "<Keyboard>/i",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard&Mouse",
+                    "action": "Inventory",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

@@ -13,11 +13,9 @@ public class InventoryUI : MonoBehaviour
     [SerializeField] private TMP_Text itemDescriptionText;
     [SerializeField] private GameObject itemInfoPanel;
 
-    [Header("Settings")]
-    [SerializeField] private KeyCode toggleKey = KeyCode.I;
-
     private List<InventorySlotUI> slotUIList = new List<InventorySlotUI>();
     private bool isOpen = false;
+ 
 
     private void Start()
     {
@@ -28,28 +26,11 @@ public class InventoryUI : MonoBehaviour
             InventoryManager.Instance.OnInventoryChanged += UpdateUI;
         }
 
-        inventoryPanel.SetActive(false);
+        inventoryPanel.SetActive(false); // Ensure hidden on start
         if (itemInfoPanel != null)
             itemInfoPanel.SetActive(false);
     }
-
-    private void Update()
-    {
-        // Compatible con ambos sistemas de input
-        #if ENABLE_INPUT_SYSTEM
-        if (UnityEngine.InputSystem.Keyboard.current != null && 
-            UnityEngine.InputSystem.Keyboard.current.iKey.wasPressedThisFrame)
-        {
-            ToggleInventory();
-        }
-        #else
-        if (Input.GetKeyDown(toggleKey))
-        {
-            ToggleInventory();
-        }
-        #endif
-    }
-
+ 
     private void CreateSlots()
     {
         if (InventoryManager.Instance == null)
@@ -98,7 +79,6 @@ public class InventoryUI : MonoBehaviour
         {
             ShowItemInfo(slot.item);
 
-            // Si el item es usable, usarlo al hacer click
             if (slot.item.isUsable)
             {
                 InventoryManager.Instance.UseItem(slotIndex);
@@ -137,9 +117,6 @@ public class InventoryUI : MonoBehaviour
         {
             HideItemInfo();
         }
-
-        // Pausar el juego cuando el inventario está abierto (opcional)
-        // Time.timeScale = isOpen ? 0 : 1;
     }
 
     private void OnDestroy()
