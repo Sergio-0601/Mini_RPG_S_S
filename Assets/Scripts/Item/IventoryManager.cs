@@ -10,6 +10,7 @@ public class InventoryManager : MonoBehaviour
     private bool hasBackpack = false;
     public event Action<List<InventorySlot>> OnInventoryChanged;
     public event Action OnBackpackObtained;
+    public ScriptableObject backpack;
     private void Awake()
     {
         if (Instance == null)
@@ -39,13 +40,12 @@ public class InventoryManager : MonoBehaviour
     {
         hasBackpack = true;
         OnBackpackObtained?.Invoke();
-        Debug.Log("Â¡Has obtenido la mochila! Ahora puedes guardar objetos.");
+        
     }
     public bool AddItem(Item item, int quantity = 1)
     {
         if (!hasBackpack && item.itemType != Item.ItemType.QuestItem)
         {
-            Debug.Log("Necesitas una mochila para guardar esto.");
             return false;
         }
         if (item.itemName == "Mochila")
@@ -79,7 +79,6 @@ public class InventoryManager : MonoBehaviour
             }
             else
             {
-                Debug.Log("Inventario lleno!");
                 return false;
             }
         }

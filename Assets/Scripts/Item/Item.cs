@@ -9,6 +9,7 @@ public class Item : ScriptableObject
         QuestItem,
         Collectable
     }
+
     [Header("Item Info")]
     public string itemName;
     [TextArea(3, 5)]
@@ -26,7 +27,7 @@ public class Item : ScriptableObject
         if (itemType == ItemType.Consumable && healAmount > 0)
         {
             player.GetComponent<Health>().Heal(healAmount);
-            Debug.Log($"Usaste {itemName} y recuperaste {healAmount} de vida");
         }
     }
+
 }

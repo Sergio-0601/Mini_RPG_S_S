@@ -10,13 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 22366373d3775d2478732d4f34e6b629, type: 3}
-  m_Name: Cegarro
+  m_Name: "Unas manzanas para la do\xF1a"
   m_EditorClassIdentifier: Assembly-CSharp::Quests
   questName: "Unas manzanas para la do\xF1a"
   description: "La se\xF1ora cerca de tu casa te ha pedido que le busques unas manzanas
     para hacer una tarta, prueba buscar alrededor."
   questType: 0
-  questProgress: 1
+  questProgress: 0
   requiredItemToStart: {fileID: 11400000, guid: 84ceb1433ee5d22478fc4887cd51124b, type: 2}
   itemToCollect: {fileID: 11400000, guid: e41e92cb245ff8e4799fa3c37cbe23e4, type: 2}
   enemyTag: 
