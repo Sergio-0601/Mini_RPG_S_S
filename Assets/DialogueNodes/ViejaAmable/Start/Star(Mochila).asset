@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 06e82b7ba727e84489e2ba93853e1229, type: 3}
+  m_Name: Star(Mochila)
+  m_EditorClassIdentifier: Assembly-CSharp::DialogueNode
+  Dialogo:
+  - " Hola joven, tengo un antojo de comer una tarta de manzana, pero mi cuerpo ya
+    no es lo que era y no puedo coger las manzanas por mi misma, podr\xEDas ayudar
+    a esta anciana?"
+  buttons:
+  - Con Mucho Gusto
+  - ' Estoy Ocupado, lo siento'
+  MisionActivar: {fileID: 0}
+  NextNodes:
+  - {fileID: 11400000, guid: bde8ed028c8c52e4c8dae3c4d9633481, type: 2}
+  - {fileID: 11400000, guid: fcaa7c8659da2c941baf1ca0f932eabb, type: 2}

@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 06e82b7ba727e84489e2ba93853e1229, type: 3}
+  m_Name: ConTarta
+  m_EditorClassIdentifier: Assembly-CSharp::DialogueNode
+  Dialogo:
+  - "Te interesa aprender a usar la espada? tengo mucha hambre como para ense\xF1arte,
+    pero si me das ese trozo de tarta, puede que te pueda dar una espada."
+  buttons:
+  - Toma * Le das el trozo de tarta*
+  - No puedo, me gusta mucho  * te vas*
+  MisionActivar: {fileID: 0}
+  NextNodes:
+  - {fileID: 11400000, guid: 19f11c2298e1e444f8d7f9ed15ff139d, type: 2}
+  - {fileID: 11400000, guid: 450d3c844dc1c414a8684e7a28816441, type: 2}

@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 06e82b7ba727e84489e2ba93853e1229, type: 3}
+  m_Name: Negacion
+  m_EditorClassIdentifier: Assembly-CSharp::DialogueNode
+  Dialogo:
+  - "Oh, bueno, no se preocupe joven, entiendo que pueda estar ocupado, si cambias
+    de opini\xF3n, seguir\xE9 estando por aqu\xED. "
+  buttons: []
+  MisionActivar: {fileID: 0}
+  NextNodes: []
