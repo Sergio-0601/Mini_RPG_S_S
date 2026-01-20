@@ -1,14 +1,11 @@
-using UnityEngine;
-
+﻿using UnityEngine;
 public class GroundEnemyCollisionDetector : MonoBehaviour
 {
     private GroundEnemyManager core;
-
     private void Awake()
     {
         core = GetComponent<GroundEnemyManager>();
     }
-
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.collider.CompareTag("Player"))

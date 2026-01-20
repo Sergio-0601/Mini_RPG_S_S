@@ -1,22 +1,15 @@
-using UnityEngine;
+﻿using UnityEngine;
 using System;
 using System.Collections.Generic;
-using UnityEngine;
-
 public class InventoryManager : MonoBehaviour
 {
     public static InventoryManager Instance { get; private set; }
-
     [Header("Inventory Settings")]
     [SerializeField] private int inventorySize = 20;
-    
     private List<InventorySlot> inventory;
-    private bool hasBackpack = false; // Para la Misión 1
-
-    // Eventos para actualizar UI
+    private bool hasBackpack = false;
     public event Action<List<InventorySlot>> OnInventoryChanged;
     public event Action OnBackpackObtained;
-
     private void Awake()
     {
         if (Instance == null)
@@ -30,7 +23,6 @@ public class InventoryManager : MonoBehaviour
             Destroy(gameObject);
         }
     }
-
     private void InitializeInventory()
     {
         inventory = new List<InventorySlot>();
@@ -39,19 +31,16 @@ public class InventoryManager : MonoBehaviour
             inventory.Add(new InventorySlot());
         }
     }
-
     public bool HasBackpack()
     {
         return hasBackpack;
     }
-
     public void ObtainBackpack()
     {
         hasBackpack = true;
         OnBackpackObtained?.Invoke();
-        Debug.Log("¡Has obtenido la mochila! Ahora puedes guardar objetos.");
+        Debug.Log("Â¡Has obtenido la mochila! Ahora puedes guardar objetos.");
     }
-
     public bool AddItem(Item item, int quantity = 1)
     {
         if (!hasBackpack && item.itemType != Item.ItemType.QuestItem)
@@ -59,15 +48,11 @@ public class InventoryManager : MonoBehaviour
             Debug.Log("Necesitas una mochila para guardar esto.");
             return false;
         }
-
-        // Si es la mochila misma
         if (item.itemName == "Mochila")
         {
             ObtainBackpack();
             return true;
         }
-
-        // Buscar slot existente si es stackable
         if (item.isStackable)
         {
             foreach (var slot in inventory)
@@ -77,16 +62,12 @@ public class InventoryManager : MonoBehaviour
                     int amountToAdd = Mathf.Min(quantity, item.maxStackSize - slot.quantity);
                     slot.AddItem(item, amountToAdd);
                     quantity -= amountToAdd;
-                    
                     OnInventoryChanged?.Invoke(inventory);
-                    
                     if (quantity <= 0)
                         return true;
                 }
             }
         }
-
-        // Buscar slot vacío
         while (quantity > 0)
         {
             InventorySlot emptySlot = FindEmptySlot();
@@ -102,15 +83,12 @@ public class InventoryManager : MonoBehaviour
                 return false;
             }
         }
-
         OnInventoryChanged?.Invoke(inventory);
         return true;
     }
-
     public bool RemoveItem(Item item, int quantity = 1)
     {
         int remainingToRemove = quantity;
-
         for (int i = inventory.Count - 1; i >= 0; i--)
         {
             if (!inventory[i].IsEmpty() && inventory[i].item == item)
@@ -128,11 +106,9 @@ public class InventoryManager : MonoBehaviour
                 }
             }
         }
-
         OnInventoryChanged?.Invoke(inventory);
         return remainingToRemove <= 0;
     }
-
     public int GetItemCount(Item item)
     {
         int count = 0;
@@ -145,22 +121,17 @@ public class InventoryManager : MonoBehaviour
         }
         return count;
     }
-
     public bool HasItem(Item item, int requiredQuantity = 1)
     {
         return GetItemCount(item) >= requiredQuantity;
     }
-
     public void UseItem(int slotIndex)
     {
         if (slotIndex < 0 || slotIndex >= inventory.Count)
             return;
-
         InventorySlot slot = inventory[slotIndex];
         if (slot.IsEmpty() || !slot.item.isUsable)
             return;
-
-        // Usar el item
         PlayerManager player = FindFirstObjectByType<PlayerManager>();
         if (player != null)
         {
@@ -169,7 +140,6 @@ public class InventoryManager : MonoBehaviour
             OnInventoryChanged?.Invoke(inventory);
         }
     }
-
     private InventorySlot FindEmptySlot()
     {
         foreach (var slot in inventory)
@@ -179,12 +149,10 @@ public class InventoryManager : MonoBehaviour
         }
         return null;
     }
-
     public List<InventorySlot> GetInventory()
     {
         return inventory;
     }
-
     public InventorySlot GetSlot(int index)
     {
         if (index >= 0 && index < inventory.Count)

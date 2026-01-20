@@ -1,43 +1,83 @@
-using System.Collections.Generic;
+ï»¿using System.Collections.Generic;
 using UnityEngine;
-
 public class NPCDialogue : MonoBehaviour
 {
-    [Header("=== DIÁLOGOS (EDITABLES EN INSPECTOR) ===")]
-    [SerializeField] List<string> dialogoAntesMision;
+    [Header("=== DIALOGOS (REQUISITO NO CUMPLIDO) ===")]
+    [SerializeField] List<string> dialogoSinRequisito;
+    [Header("=== DIALOGOS (PARA EMPEZAR) ===")]
+    [SerializeField] List<string> dialogoEmpezarMision;
+    [Header("=== DIALOGOS (DURANTE MISION) ===")]
     [SerializeField] List<string> dialogoDuranteMision;
-    [SerializeField] List<string> dialogoDespuesMision;
-
+    [Header("=== DIALOGOS (COMPLETADA / RECOMPENSA) ===")]
+    [SerializeField] List<string> dialogoMisionLista;
+    [SerializeField] List<string> dialogoPostMision1;
+    [SerializeField] List<string> dialogoPostMision2;
     [Header("=== REFERENCIAS ===")]
     [SerializeField] NPCDialogueUI dialogueUI;
     [SerializeField] Quests quest;
-
+    private bool flipFlopAfter = false;
     public void Hablar()
     {
-        dialogueUI.OnFinish -= IniciarMision;
-        dialogueUI.OnFinish += IniciarMision;
-
-        if (!quest.QuestStarted)
+        if (dialogueUI == null) dialogueUI = Object.FindFirstObjectByType<NPCDialogueUI>();
+        if (dialogueUI == null || quest == null)
         {
-            dialogueUI.TextoVisible(dialogoAntesMision);
+            Debug.LogError("NPCDialogue: dialogueUI o quest no est asignado.");
+            return;
         }
-        else if (!quest.QuestCompleted)
+        dialogueUI.OnFinish -= LogicaTrasDialogue;
+        dialogueUI.OnFinish += LogicaTrasDialogue;
+        if (quest.requiredItemToStart != null && !InventoryManager.Instance.HasItem(quest.requiredItemToStart))
         {
-            dialogueUI.TextoVisible(dialogoDuranteMision);
+            dialogueUI.TextoVisible(dialogoSinRequisito);
+            return;
         }
-        else
+        switch (quest.questProgress)
         {
-            dialogueUI.TextoVisible(dialogoDespuesMision);
+            case Quests.QuestProgress.NoStarted:
+                dialogueUI.TextoVisible(dialogoEmpezarMision);
+                break;
+            case Quests.QuestProgress.InProgress:
+                quest.CheckCompletion();
+                if (quest.QuestCompleted)
+                    dialogueUI.TextoVisible(dialogoMisionLista);
+                else
+                    dialogueUI.TextoVisible(dialogoDuranteMision);
+                break;
+            case Quests.QuestProgress.Done:
+                dialogueUI.TextoVisible(dialogoMisionLista);
+                break;
+            case Quests.QuestProgress.RewardsClaimed:
+                if (flipFlopAfter && dialogoPostMision2 != null && dialogoPostMision2.Count > 0)
+                    dialogueUI.TextoVisible(dialogoPostMision2);
+                else
+                    dialogueUI.TextoVisible(dialogoPostMision1);
+                flipFlopAfter = !flipFlopAfter;
+                break;
         }
     }
-
-    void IniciarMision()
+    void LogicaTrasDialogue()
     {
-        if (!quest.QuestStarted)
+        dialogueUI.OnFinish -= LogicaTrasDialogue;
+        if (quest.questProgress == Quests.QuestProgress.NoStarted)
         {
             quest.StartQuest();
         }
-
-        dialogueUI.OnFinish -= IniciarMision;
+        else if (quest.questProgress == Quests.QuestProgress.Done)
+        {
+            EntregarRecompensas();
+        }
+    }
+    void EntregarRecompensas()
+    {
+        Debug.Log("Entregando recompensas...");
+        if (quest.questType == Quests.QuestType.Collect && quest.itemToCollect != null)
+        {
+            InventoryManager.Instance.RemoveItem(quest.itemToCollect, quest.ObjectiveCount);
+        }
+        if (quest.itemReward != null)
+        {
+            InventoryManager.Instance.AddItem(quest.itemReward);
+        }
+        quest.questProgress = Quests.QuestProgress.RewardsClaimed;
     }
 }

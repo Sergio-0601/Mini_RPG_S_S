@@ -1,14 +1,11 @@
-using UnityEngine;
-
+﻿using UnityEngine;
 public class EnemyMovement : MonoBehaviour
 {
     private GroundEnemyManager core;
-
     private void Awake()
     {
         core = GetComponent<GroundEnemyManager>();
     }
-
     private void FixedUpdate()
     {
         if (Mathf.Abs(core.rb.linearVelocity.x) < core.maxSpeed)
@@ -17,7 +14,6 @@ public class EnemyMovement : MonoBehaviour
             core.rb.AddForce(Vector2.right * dir * core.speed);
         }
     }
-
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Borde"))

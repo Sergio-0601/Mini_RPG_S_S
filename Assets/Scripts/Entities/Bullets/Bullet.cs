@@ -1,5 +1,4 @@
-using UnityEngine;
-
+﻿using UnityEngine;
 public class Bullet : MonoBehaviour
 {
     [SerializeField] private float velocidad = 10f;
@@ -8,19 +7,15 @@ public class Bullet : MonoBehaviour
     [SerializeField] private float KnockbackF = 0;
     [SerializeField] private float StunDuration = 0;
     public Vector3 Direccion = Vector2.left;
-
     private Rigidbody2D rb;
-
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
     }
-
     private void Start()
     {
         Invoke(nameof(DestruirBala), tiempoMaximo);
     }
-
     private void Update()
     {
        if (rb.linearVelocity.magnitude < velocidad)
@@ -28,7 +23,6 @@ public class Bullet : MonoBehaviour
             rb.AddForce(Direccion.normalized * velocidad);
         }
     }
-
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Player"))
@@ -37,7 +31,6 @@ public class Bullet : MonoBehaviour
             collision.gameObject.GetComponent<PlayerManager>().TakeDamage(Damage, Direccion, KnockbackF, StunDuration);
         }
     }
-
     private void DestruirBala()
     {
         Destroy(gameObject);

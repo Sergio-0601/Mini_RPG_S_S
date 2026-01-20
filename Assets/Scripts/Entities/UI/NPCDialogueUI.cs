@@ -1,4 +1,4 @@
-using NUnit.Framework;
+﻿using NUnit.Framework;
 using System;
 using System.Collections.Generic;
 using System.Runtime.CompilerServices;
@@ -6,26 +6,28 @@ using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
-
-
 public class NPCDialogueUI : MonoBehaviour
-    
 {
     [SerializeField] GameObject Textbox;
     [SerializeField]  TMP_Text Texto;
     [SerializeField] float Timeletras;
     List<string> dialogos;
     int Iterador = 0;
-
     public event Action OnFinish;
     public void TextoVisible(List<string> textovisible)
     {
+        if (textovisible == null || textovisible.Count == 0)
+        {
+            Debug.LogWarning("NPCDialogueUI: Se intento mostrar una lista de dialogos vacia o nula.");
+            Textbox.SetActive(false);
+            OnFinish?.Invoke();
+            return;
+        }
         Iterador = 0;
         dialogos = textovisible;
         StartCoroutine(TextAppear(dialogos[Iterador], Texto, Timeletras));
         Textbox.SetActive(true);
     }
-    
     public void Next()
     {
         if (Texto.text == dialogos[Iterador])
@@ -33,9 +35,7 @@ public class NPCDialogueUI : MonoBehaviour
             Iterador++;
             if (Iterador < dialogos.Count)
             {
-
                 StartCoroutine(TextAppear(dialogos[Iterador], Texto, Timeletras));
-
             }
             else
             {
@@ -48,7 +48,6 @@ public class NPCDialogueUI : MonoBehaviour
             StopAllCoroutines();
             Texto.text = dialogos[Iterador];
         }
-      
     }
     IEnumerator<WaitForSeconds> TextAppear(string textovisible, TMP_Text letravisible, float tiempo)
     {
@@ -59,15 +58,10 @@ public class NPCDialogueUI : MonoBehaviour
             yield return new WaitForSeconds(tiempo);
         }
     }
-  
     void Start()
     {
-        
     }
-
-    
     void Update()
     {
-        
     }
 }
