@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
+
 public class NPCDialogue : MonoBehaviour
 {
     [Header("=== DIALOGOS (REQUISITO NO CUMPLIDO) ===")]

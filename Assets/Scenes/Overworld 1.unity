@@ -196,9 +196,9 @@ TilemapRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_GlobalIlluminationMeshLod: 0
-  m_SortingLayerID: -1159821017
-  m_SortingLayer: -1
-  m_SortingOrder: -1
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
   m_ChunkSize: {x: 32, y: 32, z: 32}
   m_ChunkCullingBounds: {x: 0, y: 0, z: 0}
   m_MaxChunkCount: 16
@@ -3037,7 +3037,7 @@ PrefabInstance:
     - target: {fileID: 957318135350752235, guid: e751b7905b5d87e4c81f0a4867be4ca2, type: 3}
       propertyPath: 'dialogoDuranteMision.Array.data[0]'
       value: Muchas gracias joven, pero te faltan x manzanas, si no tengo todas no
-        puedo hacer la tarta, en total necesito 5, por ahora tenes x/5, mucha suerte
+        puedo hacer la tarta, en toltal necesito 5, por ahora tenes x/5, mucha suerte
       objectReference: {fileID: 0}
     - target: {fileID: 957318135350752235, guid: e751b7905b5d87e4c81f0a4867be4ca2, type: 3}
       propertyPath: 'dialogoEmpezarMision.Array.data[0]'

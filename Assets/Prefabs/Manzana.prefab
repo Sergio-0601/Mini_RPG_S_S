@@ -88,7 +88,6 @@ MonoBehaviour:
   bobSpeed: 1
   bobHeight: 0.3
   autoPickup: 0
-  pickupKey: 101
 --- !u!1 &4660416724197322744
 GameObject:
   m_ObjectHideFlags: 0
@@ -165,11 +164,11 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_GlobalIlluminationMeshLod: 0
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 1697432763
+  m_SortingLayer: 3
   m_SortingOrder: 0
-  m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
-  m_Color: {r: 1, g: 0, b: 0, a: 1}
+  m_Sprite: {fileID: -1389860050349794336, guid: 6b3702de7e0c2824e8fa03d9a94af8e6, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
