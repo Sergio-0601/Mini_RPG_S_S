@@ -13,13 +13,22 @@ EditorBuildSettings:
     guid: d2773ee21465d804a9b5119ef9f3012b
   - enabled: 1
     path: Assets/Scenes/House_Start.unity
-    guid: 444992fd3026d554d82cbbe435383e61
+    guid: 3d7e94c76e28d234cb3d6cfda9cdd9a0
   - enabled: 1
     path: Assets/Scenes/Overworld.unity
     guid: 2ad73af107fb91546841ac68df537f6d
   - enabled: 1
+    path: Assets/Scenes/House_Player.unity
+    guid: 444992fd3026d554d82cbbe435383e61
+  - enabled: 1
+    path: Assets/Scenes/Overworld 1.unity
+    guid: b95a0ee7f9897be4194cf71a5d48c7a4
+  - enabled: 1
     path: Assets/Scenes/House_NPC.unity
     guid: c4e77f0fe9738bf47aa6d53f5b186659
+  - enabled: 1
+    path: Assets/Scenes/Overworld 2.unity
+    guid: 8727c68edaea7a4488b1d3725fd9c710
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   m_UseUCBPForAssetBundles: 0
