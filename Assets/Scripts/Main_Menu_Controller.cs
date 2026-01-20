@@ -4,7 +4,7 @@ public class Main_Menu_Controller : MonoBehaviour
 {
     public void PlayGame()
     {
-        SceneManager.LoadScene("House_Start");
+        SceneManager.LoadScene("02_House_Start");
     }
     public void ExitGame()
     {
