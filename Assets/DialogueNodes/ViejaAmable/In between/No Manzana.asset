@@ -15,6 +15,7 @@ MonoBehaviour:
   Dialogo:
   - "Todav\xEDa no tenes ninguna manzana joven, creo recordar que cerca de aqu\xED
     hab\xEDa unos manzanos, recuerda que necesito 5 para hacer mi tarta"
-  buttons: []
+  buttons:
+  - Next
   MisionActivar: {fileID: 0}
   NextNodes: []

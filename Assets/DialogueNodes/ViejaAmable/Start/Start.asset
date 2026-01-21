@@ -17,9 +17,11 @@ MonoBehaviour:
     no es lo que era y no puedo coger las manzanas por mi misma, podr\xEDas ayudar
     a esta anciana?"
   buttons:
+  - Next
   - Con Mucho Gusto
   - ' Estoy Ocupado, lo siento'
   MisionActivar: {fileID: 0}
   NextNodes:
+  - {fileID: 11400000, guid: fcaa7c8659da2c941baf1ca0f932eabb, type: 2}
   - {fileID: 11400000, guid: 0486239e9c84513448bf6fac5b1e94ad, type: 2}
   - {fileID: 11400000, guid: fcaa7c8659da2c941baf1ca0f932eabb, type: 2}

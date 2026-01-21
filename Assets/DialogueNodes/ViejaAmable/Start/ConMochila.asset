@@ -16,6 +16,8 @@ MonoBehaviour:
   - "Muchas gracias joven, yo creo que unas 5 manzanas me bastan para hacer una deliciosa
     tarta, aqu\xED te espero, si necesitas que te lo recuerde, puedes preguntarme
     de nuevo"
-  buttons: []
+  buttons:
+  - Next
   MisionActivar: {fileID: 11400000, guid: b196c8c06f27e8e428494634307a57be, type: 2}
-  NextNodes: []
+  NextNodes:
+  - {fileID: 0}

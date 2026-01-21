@@ -15,6 +15,7 @@ MonoBehaviour:
   Dialogo:
   - Muchas gracias joven, pero te faltan x manzanas, si no tengo todas no puedo hacer
     la tarta, en toltal necesito 5, por ahora tenes x/5, mucha suerte
-  buttons: []
+  buttons:
+  - Next
   MisionActivar: {fileID: 0}
   NextNodes: []

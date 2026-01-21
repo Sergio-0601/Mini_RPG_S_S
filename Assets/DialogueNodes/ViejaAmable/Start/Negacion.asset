@@ -15,6 +15,7 @@ MonoBehaviour:
   Dialogo:
   - "Oh, bueno, no se preocupe joven, entiendo que pueda estar ocupado, si cambias
     de opini\xF3n, seguir\xE9 estando por aqu\xED. "
-  buttons: []
+  buttons:
+  - Next
   MisionActivar: {fileID: 0}
   NextNodes: []

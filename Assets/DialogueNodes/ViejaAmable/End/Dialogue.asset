@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::DialogueNode
   Dialogo:
   - "Gracias de nuevo por tu ayuda, si necesito algo, ya te llamar\xE9"
-  buttons: []
+  buttons:
+  - Next
   MisionActivar: {fileID: 0}
   NextNodes: []
