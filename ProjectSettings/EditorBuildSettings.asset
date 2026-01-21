@@ -21,7 +21,7 @@ EditorBuildSettings:
     path: Assets/Scenes/04_House_Player.unity
     guid: 444992fd3026d554d82cbbe435383e61
   - enabled: 1
-    path: Assets/Scenes/05_Overworld 1.unity
+    path: Assets/Scenes/Overworld 1.unity
     guid: b95a0ee7f9897be4194cf71a5d48c7a4
   - enabled: 1
     path: Assets/Scenes/06_House_NPC.unity

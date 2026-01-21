@@ -41,7 +41,6 @@ GameObject:
   m_Component:
   - component: {fileID: 3190206586528287525}
   - component: {fileID: 5641431487228737245}
-  - component: {fileID: 5702021934640636959}
   m_Layer: 6
   m_Name: Archer
   m_TagString: Enemy
@@ -139,24 +138,6 @@ EdgeCollider2D:
   m_AdjacentEndPoint: {x: 0, y: 0}
   m_UseAdjacentStartPoint: 0
   m_UseAdjacentEndPoint: 0
---- !u!114 &5702021934640636959
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4180282822892303155}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9340939262540574b8c610dd5289b8bd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: '::'
-  balaPrefabs:
-  - {fileID: 3219832491806256926, guid: e0f29bef0b24b7f4ea0a217da9678e4d, type: 3}
-  - {fileID: 3219832491806256926, guid: cb376d6c71ec62348a1052459cecae38, type: 3}
-  puntoDisparo: {fileID: 9212627784139152016}
-  cadencia: 1
-  shotLeft: 1
 --- !u!1 &6436614801112622358
 GameObject:
   m_ObjectHideFlags: 0
@@ -234,7 +215,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 1697432763
-  m_SortingLayer: 0
+  m_SortingLayer: 3
   m_SortingOrder: 0
   m_Sprite: {fileID: -7860464216270140672, guid: 4ea41ac2f5ed51d49b41d45c6bb490c4, type: 3}
   m_Color: {r: 0.9960785, g: 0.8745099, b: 0, a: 1}
@@ -244,6 +225,6 @@ SpriteRenderer:
   m_Size: {x: 1, y: 1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
