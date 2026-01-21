@@ -13,7 +13,8 @@ MonoBehaviour:
   m_Name: No(Universal)
   m_EditorClassIdentifier: Assembly-CSharp::DialogueNode
   Dialogo:
-  - " Bueno, entonces l\xE1rgate  * te vas*"
-  buttons: []
+  - " Bueno, entonces l\xE1rgate  "
+  buttons:
+  - Next
   MisionActivar: {fileID: 0}
   NextNodes: []

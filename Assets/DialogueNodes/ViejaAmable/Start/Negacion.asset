@@ -17,6 +17,5 @@ MonoBehaviour:
     de opini\xF3n, seguir\xE9 estando por aqu\xED. "
   buttons:
   - Next
-  - Next!
   MisionActivar: {fileID: 0}
   NextNodes: []

@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::DialogueNode
   Dialogo:
   - Si no tienes nada que ofrecer, mejor vete a molestar a otra persona cojone
-  buttons: []
+  buttons:
+  - Next
   MisionActivar: {fileID: 0}
   NextNodes: []
