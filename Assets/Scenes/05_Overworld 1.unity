@@ -2922,7 +2922,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Button
+  m_text: Gracias!
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -2931,7 +2931,7 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
+    rgba: 4281479730
   m_fontColor: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
@@ -2944,7 +2944,7 @@ MonoBehaviour:
   m_spriteAsset: {fileID: 0}
   m_tintAllSprites: 0
   m_StyleSheet: {fileID: 0}
-  m_TextStyleHashCode: 0
+  m_TextStyleHashCode: -1183493901
   m_overrideHtmlColors: 0
   m_faceColor:
     serializedVersion: 2
@@ -3142,11 +3142,23 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 611146899334107795, guid: e8e02ee5acdeddc40a5cd4b1e983d7e0, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1665735903459253348, guid: e8e02ee5acdeddc40a5cd4b1e983d7e0, type: 3}
       propertyPath: m_text
       value: " Hola joven, tengo un antojo de comer una tarta de manzana, pero mi
         cuerpo ya no es lo que era y no puedo coger las manzanas por mi misma, podr\xEDas
         ayudar a esta anciana?\n"
+      objectReference: {fileID: 0}
+    - target: {fileID: 1665735903459253348, guid: e8e02ee5acdeddc40a5cd4b1e983d7e0, type: 3}
+      propertyPath: m_fontSize
+      value: 24
+      objectReference: {fileID: 0}
+    - target: {fileID: 1665735903459253348, guid: e8e02ee5acdeddc40a5cd4b1e983d7e0, type: 3}
+      propertyPath: m_enableAutoSizing
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3904007254804945594, guid: e8e02ee5acdeddc40a5cd4b1e983d7e0, type: 3}
       propertyPath: m_Pivot.x
@@ -3232,6 +3244,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Canvas_Text
       objectReference: {fileID: 0}
+    - target: {fileID: 5789958738006525078, guid: e8e02ee5acdeddc40a5cd4b1e983d7e0, type: 3}
+      propertyPath: Timeletras
+      value: 0.01
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects:
     - {fileID: 454477328464619308, guid: e8e02ee5acdeddc40a5cd4b1e983d7e0, type: 3}
@@ -3286,7 +3302,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e5c82042c773383409760e4b0f8bf8f9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Manager
-  UserInterface: {fileID: 0}
+  UserInterface: {fileID: 638592952}
   Botones:
   - {fileID: 604961035}
   - {fileID: 1624032120}
@@ -3570,8 +3586,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 10
-  m_fontSizeBase: 10
+  m_fontSize: 11
+  m_fontSizeBase: 11
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -5973,7 +5989,7 @@ RectTransform:
   m_GameObject: {fileID: 1841852524}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.075, y: 1.25, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 591617839}
@@ -5981,7 +5997,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -0.000022888184}
+  m_AnchoredPosition: {x: 5.36, y: -56}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1841852526
@@ -6028,19 +6044,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: Manager, Assembly-CSharp
-        m_MethodName: OnCLickButton
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 560053732952150685, guid: f59f4cebb4e07f441ad4fda460072727, type: 3}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 638592956}
         m_TargetAssemblyTypeName: Manager, Assembly-CSharp
         m_MethodName: Next
         m_Mode: 1

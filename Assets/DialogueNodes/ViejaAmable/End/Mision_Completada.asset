@@ -16,7 +16,7 @@ MonoBehaviour:
   - " Que manzanas m\xE1s bonitas joven, muchas gracias por vuestra ayuda, quieres
     un trozo?  * obtienes un trozo de tarta*"
   buttons:
-  - Gracias, hasta luego!
+  - Gracias
+  - Next
   MisionActivar: {fileID: 0}
-  NextNodes:
-  - {fileID: 0}
+  NextNodes: []
