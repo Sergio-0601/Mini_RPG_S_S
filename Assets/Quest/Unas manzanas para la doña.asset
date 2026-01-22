@@ -15,12 +15,6 @@ MonoBehaviour:
   questName: "Unas manzanas para la do\xF1a"
   description: "La se\xF1ora cerca de tu casa te ha pedido que le busques unas manzanas
     para hacer una tarta, prueba buscar alrededor."
-  questType: 0
-  questProgress: 0
-  requiredItemToStart: {fileID: 11400000, guid: 84ceb1433ee5d22478fc4887cd51124b, type: 2}
-  itemToCollect: {fileID: 11400000, guid: e41e92cb245ff8e4799fa3c37cbe23e4, type: 2}
-  enemyTag: 
-  ObjectiveCount: 5
+  ObjectiveCount: 2
   CurrentCount: 0
-  goldReward: 0
-  itemReward: {fileID: 11400000, guid: 418e2c7ab1f423f49bbe76bf2cf22e02, type: 2}
+  questProgress: 0

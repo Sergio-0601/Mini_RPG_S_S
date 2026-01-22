@@ -17,5 +17,6 @@ MonoBehaviour:
     la tarta, en toltal necesito 5, por ahora tenes x/5, mucha suerte
   buttons:
   - Next
+  - Next
   MisionActivar: {fileID: 0}
   NextNodes: []
